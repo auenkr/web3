@@ -1,6 +1,6 @@
 import { ed25519 } from "@noble/curves/ed25519.js"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
-import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
+import { Connection, LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
 import { toUint8Array } from "js-base64"
 import { useCallback, useEffect, useState } from "react"
 
@@ -15,13 +15,14 @@ export function useSolana() {
         console.log("No public key")
         return
       }
+      const connection = new Connection("https://solana-devnet.g.alchemy.com/v2/alch_BbaFedRbXFkz7jzDl6c6R")
       const amount = amountInLamport
       const data = await connection.requestAirdrop(wallet.publicKey, amount)
       alert(`success airdrop request, amount:  ${amount},\nsignature, ${data}`)
       setBalance((prev) => prev + amount)
     }
     sendSol()
-  }, [connection, wallet.publicKey])
+  }, [wallet.publicKey])
 
   const sendSolana = useCallback((publicKey: string, amountInLamport: number) => {
     console.log('sendSolana')
