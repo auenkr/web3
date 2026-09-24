@@ -1,6 +1,6 @@
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react"
 import { WalletDisconnectButton, WalletModalProvider, WalletMultiButton } from "@solana/wallet-adapter-react-ui"
-import { clusterApiUrl, type Cluster } from "@solana/web3.js"
+import { type Cluster } from "@solana/web3.js"
 import { useMemo } from "react"
 import HomePage from "./component/AirDrop"
 import '@solana/wallet-adapter-react-ui/styles.css'
