@@ -8,8 +8,8 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 function App() {
   const network: Cluster = "devnet"
   const endpoint = useMemo(() => {
-    const url = clusterApiUrl(network)
-    // const url = "https://solana-devnet.g.alchemy.com/v2/alch_BbaFedRbXFkz7jzDl6c6R"
+    // const url = clusterApiUrl(network)
+    const url = "https://devnet.helius-rpc.com/?api-key=a2b0e6b5-4918-42d4-a9c9-848c7ac3b2f7"
     return url
   }, [network])
   // empty array -> default all wallets it was able to find
